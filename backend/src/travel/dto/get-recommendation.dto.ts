@@ -1,12 +1,16 @@
-import { IsInt, IsNotEmpty, IsString, Max, Min } from 'class-validator';
+import { IsInt, Max, Min } from 'class-validator';
+import { IsCountryId } from '../country/is-country-id.validator';
+import { Type } from 'class-transformer';
 
 export class GetRecommendationDto {
   @IsInt()
   @Min(1)
   @Max(10)
+  @Type(() => Number)
   days: number;
 
-  @IsString()
-  @IsNotEmpty()
-  country: string;
+  @IsInt()
+  @Type(() => Number)
+  @IsCountryId()
+  country: number;
 }
