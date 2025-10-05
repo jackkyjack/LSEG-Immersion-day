@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
+import { AppController } from '../../app.controller';
+import { AppService } from '../../app.service';
+import { TravelModule } from '../travel.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TravelModule } from './travel/travel.module';
-import { CountryModule } from './travel/country/country.module';
+import { CountryModule } from '../country/country.module';
 
 @Module({
   imports: [
